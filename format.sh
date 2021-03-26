@@ -1,16 +1,9 @@
 #!/bin/bash
 
-FILES="
-./src/midi.c
-./src/os.h
-./src/lut.c
-./src/test.c
-./src/tse.h
-./src/const.h
-./src/qfmt.h
-"
+CFILES=`find src | grep "\.c"`
+INCFILES=`find src | grep "\.h"`
 
-for f in $FILES; do
+for f in $CFILES $INCFILES; do
   indent $f -brf -linux -l10000
 	rm $f~
 done

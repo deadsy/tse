@@ -20,6 +20,10 @@ Tiny Synth Engine Includes
 #include "const.h"
 
 //-----------------------------------------------------------------------------
+
+#define TSE_VERSION "0.1"
+
+//-----------------------------------------------------------------------------
 // math
 
 // cosine
@@ -55,7 +59,7 @@ static inline int clampi(int x, int lo, int hi) {
 //-----------------------------------------------------------------------------
 // test functions
 
-void rms_error(const char *name, float x0, float x1, float dx, float (*f0)(float), float(*f1)(float));
+void rms_error(const char *name, float x0, float x1, float dx, float (*f0)(float), float (*f1)(float));
 void benchmark_f0(const char *name, int16_t(*f0) (uint32_t), unsigned int n);
 void benchmark_f1(const char *name, float (*f1)(float), unsigned int n);
 void benchmark_f2(const char *name, uint32_t(*f2) (q24), unsigned int n);
